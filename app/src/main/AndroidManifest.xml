@@ -22,6 +22,7 @@
         </activity>
         <activity android:name=".NewWordActivity" />
         <activity android:name=".RilevazioneAuto" />
+        <activity android:name=".RilevazioneMan" />
     </application>
 
 </manifest>
