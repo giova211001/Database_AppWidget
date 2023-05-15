@@ -21,6 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".NewWordActivity" />
+        <activity android:name=".RilevazioneAuto" />
     </application>
 
 </manifest>
