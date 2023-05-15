@@ -4,6 +4,8 @@ package com.example.android.roomwordssample
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -21,43 +23,58 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.first_page)
 
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
-        val adapter = WordListAdapter()
-        recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        val auto: Button = findViewById(R.id.button_automatic)
+        val man: Button = findViewById(R.id.button_manual)
 
-        val fab = findViewById<FloatingActionButton>(R.id.fab)
-        fab.setOnClickListener {
-            val intent = Intent(this@MainActivity, NewWordActivity::class.java)
-            startActivityForResult(intent, newWordActivityRequestCode)
+        //gestisco automatico
+        auto.setOnClickListener{clickedButton: View -> clickedButton as Button
+            val intent = Intent(clickedButton.context, RilevazioneAuto::class.java)
+            startActivity(intent)
         }
+
+        //stessa cosa da fare per automatico
+
+
+
+
+
+        //val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
+        //val adapter = WordListAdapter()
+        //recyclerView.adapter = adapter
+        //recyclerView.layoutManager = LinearLayoutManager(this)
+
+        //val fab = findViewById<FloatingActionButton>(R.id.fab)
+        //fab.setOnClickListener {
+        //    val intent = Intent(this@MainActivity, NewWordActivity::class.java)
+        //    startActivityForResult(intent, newWordActivityRequestCode)
+        //}
 
         
         // Add an observer on the LiveData returned by getAlphabetizedWords.
         // The onChanged() method fires when the observed data changes and the activity is
         // in the foreground.
-        wordViewModel.allWords.observe(owner = this) { words ->
+        //wordViewModel.allWords.observe(owner = this) { words ->
             // Update the cached copy of the words in the adapter.
-            words.let { adapter.submitList(it) }
-        }
-    }
+         //   words.let { adapter.submitList(it) }
+        //}
+   // }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, intentData: Intent?) {
-        super.onActivityResult(requestCode, resultCode, intentData)
+    //override fun onActivityResult(requestCode: Int, resultCode: Int, intentData: Intent?) {
+        //super.onActivityResult(requestCode, resultCode, intentData)
 
-        if (requestCode == newWordActivityRequestCode && resultCode == Activity.RESULT_OK) {
-            intentData?.getStringExtra(NewWordActivity.EXTRA_REPLY)?.let { reply ->
-                val word = Word(reply)
-                wordViewModel.insert(word)
-            }
-        } else {
-            Toast.makeText(
-                applicationContext,
-                R.string.empty_not_saved,
-                Toast.LENGTH_LONG
-            ).show()
-        }
+        //if (requestCode == newWordActivityRequestCode && resultCode == Activity.RESULT_OK) {
+          //  intentData?.getStringExtra(NewWordActivity.EXTRA_REPLY)?.let { reply ->
+           //     val word = Word(reply)
+            //    wordViewModel.insert(word)
+           // }
+        //} else {
+           // Toast.makeText(
+             //   applicationContext,
+              //  R.string.empty_not_saved,
+             //   Toast.LENGTH_LONG
+            //).show()
+       // }
     }
 }
