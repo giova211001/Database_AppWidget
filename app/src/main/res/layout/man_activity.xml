@@ -6,7 +6,47 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/prova"
+        android:id="@+id/data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@id/orario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:hint="Inserire data"
+        tools:layout_editor_absoluteX="97dp"
+        tools:layout_editor_absoluteY="20dp" />
+
+    <EditText
+        android:id="@+id/orario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@id/distanza"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/data"
+        android:hint="Inserire orario"
+        tools:layout_editor_absoluteX="97dp"
+        tools:layout_editor_absoluteY="20dp" />
+
+    <EditText
+        android:id="@+id/distanza"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="Inserire distanza"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@id/velocita"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/orario" />
+
+    <EditText
+        android:id="@+id/velocita"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -14,17 +54,17 @@
         app:layout_constraintBottom_toTopOf="@id/invio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="Name"
+        app:layout_constraintTop_toBottomOf="@id/orario"
+        android:hint="Inserire velocità"
         tools:layout_editor_absoluteX="97dp"
-        tools:layout_editor_absoluteY="57dp" />
+        tools:layout_editor_absoluteY="20dp" />
 
     <Button
         android:id="@+id/invio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintTop_toBottomOf="@id/prova"
+        android:text="Inserisci rilevazione"
+        app:layout_constraintTop_toBottomOf="@id/distanza"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

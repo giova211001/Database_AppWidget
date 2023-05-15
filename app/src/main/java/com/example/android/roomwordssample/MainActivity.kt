@@ -36,7 +36,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         //stessa cosa da fare per automatico
-
+        man.setOnClickListener{clickedButton: View -> clickedButton as Button
+            val intent = Intent(clickedButton.context, RilevazioneMan::class.java)
+            startActivity(intent)
+        }
 
 
 
