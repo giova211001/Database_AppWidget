@@ -4,6 +4,7 @@ package com.example.android.roomwordssample
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
@@ -35,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         //stessa cosa da fare per automatico
+
 
 
 
