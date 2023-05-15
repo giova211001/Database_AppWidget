@@ -8,7 +8,7 @@ class RilevazioneMan: AppCompatActivity() {
     public override fun onCreate(savedInstanceState: Bundle?){
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_new_word)
+        setContentView(R.layout.man_activity)
 
 
     }
